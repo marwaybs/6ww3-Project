@@ -65,6 +65,21 @@ function validateEmail(form, name) {
   }
 }
 
+//checks if a valid date is inputted with a regular expression
+function validateDate(form, name) {
+  //storing regular expression in variable
+  var re = /^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/;
+  var value = document.forms[form][name].value;
+  //testing the value of the field with the regular expression
+  if (re.test(value)){
+    document.getElementById("birthday").style.visibility = "hidden";
+  }
+  else {
+    falseFields++;
+    document.getElementById("birthday").style.visibility = "visible";
+  }
+}
+
 
 function validateNumber(form, name) {
   var value = document.forms[form][name].value;
@@ -86,8 +101,9 @@ function validateRegistration() {
   validateRadioButton("registrationForm", "visitFrequency");
   validateEmail("registrationForm", "email");
   validateNumber("registrationForm", "happy");
+  validateDate("registrationForm", "birthday");
 
-  // if there is 0 invalid fields, then submit the form, else do not 
+  // if there is 0 invalid fields, then submit the form, else do not
   if (falseFields != 0){
     return false;
   }
