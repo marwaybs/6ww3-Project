@@ -1,0 +1,125 @@
+<!-- specifying that html5 is being used -->
+<!DOCTYPE html>
+<html>
+
+  <!-- where meta data and links to external files (CSS, javascript, etc.) are listed  -->
+  <head>
+    <title>Search</title>
+
+    <!-- Allows responsiveness for mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- linking to my external CSS stylesheet -->
+    <link href="styles/styles.css" type="text/css" rel="stylesheet" />
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="CafeConnect" />
+    <meta property="og:url" content="index.html" />
+    <meta property="og:image" content="images/coffee2x.png" />
+    <meta property="og:description" content="Lookup and rate the quality of wifi at cafes" />
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="CafeConnect" />
+    <meta name="twitter:title" content="CafeConnect" />
+    <meta name="twitter:description" content="Lookup and rate the quality of wifi at cafes" />
+    <meta name="twitter:image" content="images/coffee2x.png" />
+
+    <!-- favicons for mobile apps -->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
+    <link rel="manifest" href="favicons/site.webmanifest">
+    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="theme-color" content="#ffffff">
+
+    <!-- ios web app metatags -->
+    <link rel="apple-touch-startup-image" href="/iamges/coffee2x.png">
+    <meta name="apple-mobile-web-app-title" content="CafeConnect">
+
+    <!-- android web app metatags -->
+    <link rel="manifest" href="manifest.json">
+
+
+  </head>
+  <!-- a container for all my content where I can use flexbox to organize header, footer, and main content-->
+  <div class="wrapper">
+    <!-- header for the top bar containing my sites title and slogan -->
+    <header class="header">
+      <div id="title">
+        <p>CafeConnect</p>
+        <p id="slogan">Worth the Coffee?</p>
+      </div>
+    </header>
+    <!-- The main content of the page -->
+    <article class="main">
+      <!-- form element to collect data from the <input> elements inside of it -->
+      <form name="registrationForm" onsubmit="return validateRegistration()">
+        <p>Registration</p>
+        Username:<br>
+        <!-- creates text input -->
+        <input type="text" name="username" >
+        <p class="invalidText" id="username">Please enter a username</p>
+
+        How happy are you?<br>
+        <!-- Number input -->
+        <input type="" name="happy" >
+        <p class="invalidText" id="happy">Please enter a number equaling your happiness</p>
+
+        Email:<br>
+        <!-- creates text input -->
+        <input type="text" name="email" >
+        <p class="invalidText" id="email">Please enter a valid email</p>
+
+        Password:<br>
+        <!-- creates password input with the text appearing as *** -->
+        <input type="password" name="password" >
+        <p class="invalidText" id="password">Please enter a password</p>
+
+        Repeat Password:<br>
+        <input type="password" name="repeatedPassword" >
+        <p class="invalidText" id="repeatedPassword">Both password fields must match</p>
+
+        <p>How often do you visit cafes?</p>
+        <!-- radiobuttons where only one button can be pressed at a time -->
+        <div class="radioButtons">
+          <input type="radio" name="visitFrequency" value="0"> 0<br>
+          <input type="radio" name="visitFrequency" value="1-3"> 1-3<br>
+          <input type="radio" name="visitFrequency" value="4-5"> 4-5<br>
+          <input type="radio" name="visitFrequency" value="6+"> 6+<br>
+        </div>
+        <p class="invalidText" id="visitFrequency">Please pick a frequency</p>
+
+        <p>What do you order at cafes?</p>
+        <!-- checkboxes where many boxes can be pressed at once and all checked boxes are recorded -->
+        <div class="checkboxes">
+          <input type="checkbox" name="beverageCheck" value="beverage">Beverage<br>
+          <input type="checkbox" name="order" value="pastry" >Pastry<br>
+          <input type="checkbox" name="order" value="fullMeal" >Full Meal<br>
+        </div>
+        <br>
+        <!-- A resizable textarea that takes a larger amount of text than a text input -->
+        <p>Other:<p>
+          <textarea rows="5" cols="50" placeholder="What else do you order at cafes?"></textarea>
+          <br>
+          <!-- Creating a button to submit the form -->
+        <input type="submit" id="registrationSubmit" value="Submit">
+      </form>
+    </article>
+    <!-- The side menu that contains links to other pages -->
+    <aside class="aside">
+      <!-- seperate section to style the menu seperately from the aside class -->
+      <menu class='menu'>
+        <!-- an unordered list to list all of the links -->
+          <!-- list elements for each link ( <a> ) with the url they lead to and the text displayed for them -->
+          <li><a href="index.html">Home</a></li>
+          <li><a href="search.html">Search</a></li>
+          <li><a href="submission.html">Submit</a></li>
+          <li><a href="registration.html">Register</a></li>
+      </menu>
+    </aside>
+    <!-- A simple footer that stays at the bottom of the page -->
+    <footer class="footer">Feedback? Please contact Bhaag Marway</footer>
+  </div>
+  <script type="text/javascript" src="js/validation.js"></script>
+</html>

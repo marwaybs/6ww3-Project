@@ -1,0 +1,199 @@
+/* setting backgroud color of document and font size */
+html {
+  background-color: #EDF5E1;
+  font-size: 18px;
+}
+
+/* for flexbox to wrap document to place header, footer, menu, and main content */
+.wrapper {
+  display: flex;
+  flex-flow: row wrap;
+  text-align: center;
+}
+
+/* Adding padding to all child elements of wrapper and giving them a flex of 1 */
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
+}
+
+/* Change background color of header */
+.header {
+  background-color: #5CDB95;
+}
+
+/* Change background color of footer */
+.footer {
+  background-color: #5CDB95;
+}
+
+/* Change background color of the main content */
+.main {
+  background: #EDF5E1;
+}
+
+/* Change background color of the left side menu */
+.aside {
+  background-color: #8EE4AF;
+}
+
+
+/* removing the empty space to the left of the menu bar */
+.menu {
+  padding-left: 0px;
+}
+
+/* remove bullets for each list item in menu bar and remove empty space to the left*/
+menu {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+/* display block makes each list item start on a new line */
+/* padding is removed from left and bottom */
+li a {
+  display:block;
+  padding-left: 0px;
+  padding-bottom: 10px;
+
+}
+
+/* when a <li> is active, the text item is white */
+li a.active {
+  color: white;
+}
+
+/* changes background color of list item when hovered over */
+li a:hover:not(.active) {
+  background-color: #05386B;
+  color: white;
+}
+
+
+/* Index */
+#indexMain {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* Setting max width of picture to 140px */
+.indexCoffee {
+  max-width:140px;
+}
+
+/* Sample Results Page */
+
+/* setting the searchresults id to take up 100% of their parent container's width */
+#searchResults {
+  width:100%
+}
+
+/* setting the search results to take up 100% of their parent container's width */
+.sampleResultsDescription {
+  width:100%
+}
+
+/* google map */
+#map {
+  width: 100%;
+  height: 400px;
+  background-color: grey;
+}
+
+
+/* if the width > 600px, put the side bar on the side of the screen */
+@media all and (min-width: 600px) {
+  .aside { flex: 1 auto; }
+}
+
+/* if the width > 800px, make the main content 8* the size of other elements in its column
+and put the elements in the order: aside, main, footer */
+@media all and (min-width: 800px) {
+  .main    { flex: 8 0px; }
+  .aside { order: 1; }
+  .main    { order: 3; }
+  .footer  { order: 4; }
+
+  /* google map */
+  /* #map {
+    width: 100%;
+    height: 300px;
+    width: 300px;
+    background-color: grey;
+  } */
+
+}
+
+@media all and (min-width: 1200px) {
+
+  /* google map */
+  /* #map {
+    width: 100%;
+    height: 400px;
+    width: 400px;
+    background-color: grey;
+  } */
+
+}
+
+
+
+/* if the resolution is smaller than 465, set the size of graphics to be 100px max */
+@media all and (max-width: 465px) {
+  .responsiveGraphic {
+    max-width: 100px;
+  }
+  .largerResponsiveGraphic{
+    max-width: 300px;
+  }
+}
+
+/* Individual Sample */
+
+/* centering content in this container using flexbox and making it wrap if the contents do not all fit horizontally */
+#individualSample {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+/* adding padding to the elements withing the id individualSample */
+#individualSample > * {
+  padding: 10px;
+}
+
+/* making pictures and videos responsive by having them take up 100% of the width of the parent and allowing their height to grow as necessary */
+.responsiveGraphic {
+  width: 100%;
+  height: auto;
+}
+
+.largerResponsiveGraphic {
+  width: 100%;
+  height: auto;
+}
+
+
+/* CSS validaton */
+
+/* all invalid text should first be hidden */
+.invalidText {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: red;
+  visibility: hidden;
+}
+
+/* if input is invalid, set the border color to #5CDB95 */
+input:invalid {
+  border: 2px solid #5CDB95;
+}
+
+/* if input is valid, set the border color to black */
+input:valid {
+  border: 2px solid black;
+}
