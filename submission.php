@@ -1,5 +1,7 @@
+<?php include 'components/loggedInCheck.inc.php' ?>
 <?php include 'dbReq/newCafe.php' ?>
 <?php include 'upload/submitFile.php' ?>
+<?php session_start() ?>
 
 <?php
   if (isset($_FILES['cafeImage'])) {

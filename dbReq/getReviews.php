@@ -1,7 +1,7 @@
 <?php
 function getReviews($cafeid){
   try {
-
+    //connecting to database with credentials
     $servername = "localhost";
     $SQLusername = "root";
     $SQLpassword = "mysql";
@@ -9,10 +9,11 @@ function getReviews($cafeid){
 
     // set the PDO error mode to exception
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    //query to select all reviews for a specific cafe
     $stmt = $pdo->query('SELECT * FROM review where cafe_id =' . $cafeid);
 
     $reviews = "";
-
+    //inserting reviews into html to be inserted into the page
     foreach ($stmt as $row)
     {
         $reviews = $reviews .
@@ -22,8 +23,8 @@ function getReviews($cafeid){
           <hr>
         </div>';
     }
-
-    return $reviews;
+    //printing out the reviews on the page
+    echo $reviews;
   }
   catch(PDOException $e)
       {
@@ -32,5 +33,4 @@ function getReviews($cafeid){
 
   $pdo = null;
 }
-// getReviews("1");
 ?>

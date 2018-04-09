@@ -1,7 +1,7 @@
+<?php include 'dbReq/newUser.php' ?>
 <?php
   if (isset($_POST['username'])) {
-    newUser($imageURL, "VIDEOURL");
-    echo '<p class="updateText">You are now registered!<p>';
+    newUser();
   }
 ?>
 
@@ -17,7 +17,7 @@
     <!-- The main content of the page -->
     <article class="main">
       <!-- form element to collect data from the <input> elements inside of it -->
-      <form name="registrationForm" onsubmit="return validateRegistration()">
+      <form method="POST" action="registration.php" name="registrationForm" onsubmit="return validateRegistration()">
         <p>Registration</p>
         Username:<br>
         <!-- creates text input -->

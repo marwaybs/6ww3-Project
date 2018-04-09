@@ -1,7 +1,7 @@
 <?php
 function checkPassword($username, $password){
   try {
-
+    //connecting to database with credentials
     $servername = "localhost";
     $SQLusername = "root";
     $SQLpassword = "mysql";
@@ -9,9 +9,9 @@ function checkPassword($username, $password){
 
       // set the PDO error mode to exception
       $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+      //query to check if username and password are present in the database
       $stmt = $pdo->query('SELECT * FROM user WHERE username = "'. $username .'" and password = SHA2(CONCAT("'. $password .'", "4b3403665fea6"), 0)');
-      // SELECT * FROM user WHERE username = 'monkey' and password = SHA2(CONCAT('cat', "4b3403665fea6"), 0)
-
+      //if row count is equal to one, then the user exists and should be allowed to login
       return $stmt->rowCount() === 1;
 
       }

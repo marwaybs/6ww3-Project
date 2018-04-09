@@ -5,7 +5,7 @@
     if ($validLogin){
       session_start();
       $_SESSION['isLoggedIn'] = true;
-      header("Location: http://" . $_SERVER['HTTP_HOST'] . "/private.php");
+      header("Location: http://" . $_SERVER['HTTP_HOST'] . "/submission.php");
       exit();
     } else {
       echo '<p class="updateText">Login Failed :c<p>';
@@ -14,7 +14,7 @@
     if (checkPassword($_POST['username'], $_POST['password'])){
       session_start();
       $_SESSION['isLoggedIn'] = true;
-      header("Location: http://" . $_SERVER['HTTP_HOST'] . "/private.php");
+      header("Location: http://" . $_SERVER['HTTP_HOST'] . "/submission.php");
       exit();
     }
 ?>

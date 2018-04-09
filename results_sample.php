@@ -19,9 +19,6 @@
 
       <!-- The location of the cafe -->
       <div id="map"></div>
-      <script>
-      initMap(resultsSampleLocations);
-      </script>
       <!-- Creating a table element to show search results -->
       <table id="searchResults">
         <?php
