@@ -1,56 +1,19 @@
+<?php
+  if (isset($_POST['username'])) {
+    newUser($imageURL, "VIDEOURL");
+    echo '<p class="updateText">You are now registered!<p>';
+  }
+?>
+
 <!-- specifying that html5 is being used -->
 <!DOCTYPE html>
 <html>
+<?php include 'components/head.inc.php'; ?>
 
-  <!-- where meta data and links to external files (CSS, javascript, etc.) are listed  -->
-  <head>
-    <title>Search</title>
-
-    <!-- Allows responsiveness for mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- linking to my external CSS stylesheet -->
-    <link href="styles/styles.css" type="text/css" rel="stylesheet" />
-
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="CafeConnect" />
-    <meta property="og:url" content="index.html" />
-    <meta property="og:image" content="images/coffee2x.png" />
-    <meta property="og:description" content="Lookup and rate the quality of wifi at cafes" />
-
-    <!-- Twitter Card Tags -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:site" content="CafeConnect" />
-    <meta name="twitter:title" content="CafeConnect" />
-    <meta name="twitter:description" content="Lookup and rate the quality of wifi at cafes" />
-    <meta name="twitter:image" content="images/coffee2x.png" />
-
-    <!-- favicons for mobile apps -->
-    <link rel="apple-touch-icon" sizes="180x180" href="favicons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicons/favicon-16x16.png">
-    <link rel="manifest" href="favicons/site.webmanifest">
-    <link rel="mask-icon" href="favicons/safari-pinned-tab.svg" color="#5bbad5">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- ios web app metatags -->
-    <link rel="apple-touch-startup-image" href="/iamges/coffee2x.png">
-    <meta name="apple-mobile-web-app-title" content="CafeConnect">
-
-    <!-- android web app metatags -->
-    <link rel="manifest" href="manifest.json">
-
-
-  </head>
   <!-- a container for all my content where I can use flexbox to organize header, footer, and main content-->
   <div class="wrapper">
-    <!-- header for the top bar containing my sites title and slogan -->
-    <header class="header">
-      <div id="title">
-        <p>CafeConnect</p>
-        <p id="slogan">Worth the Coffee?</p>
-      </div>
-    </header>
+    <?php include 'components/header.inc.php'; ?>
+
     <!-- The main content of the page -->
     <article class="main">
       <!-- form element to collect data from the <input> elements inside of it -->
@@ -111,20 +74,8 @@
         <input type="submit" id="registrationSubmit" value="Submit">
       </form>
     </article>
-    <!-- The side menu that contains links to other pages -->
-    <aside class="aside">
-      <!-- seperate section to style the menu seperately from the aside class -->
-      <menu class='menu'>
-        <!-- an unordered list to list all of the links -->
-          <!-- list elements for each link ( <a> ) with the url they lead to and the text displayed for them -->
-          <li><a href="index.html">Home</a></li>
-          <li><a href="search.html">Search</a></li>
-          <li><a href="submission.html">Submit</a></li>
-          <li><a href="registration.html">Register</a></li>
-      </menu>
-    </aside>
-    <!-- A simple footer that stays at the bottom of the page -->
-    <footer class="footer">Feedback? Please contact Bhaag Marway</footer>
+    <?php include 'components/menu.inc.php'; ?>
+    <?php include 'components/footer.inc.php'; ?>
   </div>
   <script type="text/javascript" src="js/validation.js"></script>
 </html>

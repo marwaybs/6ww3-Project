@@ -197,3 +197,8 @@ input:invalid {
 input:valid {
   border: 2px solid black;
 }
+
+.updateText{
+  text-align: center;
+  color: green;
+}
