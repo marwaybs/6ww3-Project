@@ -5,7 +5,7 @@ function determineQuery(){
     return $query = 'SELECT * FROM cafe WHERE name = "' . $_POST['nameSearch'] . '"';
 
   } else if (isset($_POST['ratingSearch'])) {
-    return $query = 'SELECT cafe_id, name, latitude, longitude, image FROM review, cafe GROUP BY cafe_id HAVING ROUND(AVG(rating), 0) = ' . $_POST['ratingSearch'];
+    return $query = 'SELECT cafe_id, name, latitude, longitude, image FROM review, cafe HAVING ROUND(AVG(rating), 0) = ' . $_POST['ratingSearch'];
 
   } else if (isset($_POST['latitude']) && (isset($_POST['longitude']))) {
     return $query = 'SELECT * FROM cafe ORDER BY ABS((' . $_POST["latitude"] . ' - ABS(latitude)) + (' . $_POST["longitude"] . ' - ABS(longitude)))';

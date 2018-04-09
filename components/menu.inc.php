@@ -10,6 +10,5 @@
       <li><a href="registration.php">Register</a></li>
       <li><a href="login.php">Login</a></li>
       <li><a href="logout.php">Logout</a></li>
-      <li><a href="private.php">Private Page</a></li>
   </menu>
 </aside>
